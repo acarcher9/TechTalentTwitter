@@ -9,7 +9,7 @@
 	-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User</title>
+    <title>User Feed</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
     <link rel="stylesheet" href="/custom.css">
@@ -37,7 +37,7 @@
     <div class="list-group-item list-group-item-action">
         <div class="d-flex w-100 justify-content-between">
             <h5>@<span th:text="${tweet.user.username}"></span>
-                <small><span th:text="${#dates.format(tweet.createdAt, 'M/d/yy')}"></span></small></h5>
+                <small><span th:text="${tweet.date}"></span></small></h5>
         </div>
         <p class="mb-1" th:utext="${tweet.message}"></p>
     </div>

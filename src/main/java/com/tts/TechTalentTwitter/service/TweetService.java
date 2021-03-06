@@ -72,6 +72,7 @@ public class TweetService {
         tweet.setTags(tags);
     }
 
+//    functionality to display shortened links and display a more the approachable timestamp (ie. "moments ago"/using PrettyTime)
     private List<TweetDisplay> formatTweets(List<Tweet> tweets) {
         addTagLinks(tweets);
         shortenLinks(tweets);
@@ -79,6 +80,7 @@ public class TweetService {
         return displayTweets;
     }
 
+//    built-out method for formatting appearance
     private List<TweetDisplay> formatTimestamps(List<Tweet> tweets) {
         List<TweetDisplay> response = new ArrayList<>();
         PrettyTime prettyTime = new PrettyTime();
@@ -118,6 +120,7 @@ public class TweetService {
         }
     }
 
+//    functionality to automatically shorten links in a tweet
     private void shortenLinks(List<Tweet> tweets) {
         Pattern pattern = Pattern.compile("https?[^ ]+");
         for (Tweet tweet : tweets) {

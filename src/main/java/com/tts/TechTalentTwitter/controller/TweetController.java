@@ -34,6 +34,8 @@ public class TweetController {
     @Autowired
     private TagRepository tagRepository;
 
+
+//    the loop in getFeed allows for filtering the feed based on who a user follows
     @GetMapping(value= {"/tweets", "/"})
     public String getFeed(@RequestParam(value="filter", required=false) String filter, Model model){
         User loggedInUser = userService.getLoggedInUser();
